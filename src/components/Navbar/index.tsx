@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {searchCity } from '../../redux/actions/appAtions';
+import {searchCity,setCity } from '../../redux/actions/appAtions';
 import { useDispatch } from 'react-redux';
 
 const Navbar = ()=> {
@@ -7,12 +7,17 @@ const Navbar = ()=> {
   const dispatch  = useDispatch()
 
   const handlePress =()=>{
-    dispatch(searchCity(nameCity))
+    if(nameCity.length){
+      dispatch(searchCity(nameCity))
+    }else{
+      alert("empty field")
+      dispatch(setCity(null))
+    }
   }
   return (
-    <div className='container'>
-      <div className='row g-2'>
-        <div className='col-7'>
+    <div className='container border rounded-pill  d-flex '>
+      <div className='row g-2 d-flex w-auto p-3'>
+        <div className='col-7 d-flex    justify-content-center'>
           <input  className='input-group flex-nowrap' value={nameCity} onChange={(e)=>setNameCity(e.target.value)} placeholder='Type the city name'/>
         </div>
         <div className='col-5'>
