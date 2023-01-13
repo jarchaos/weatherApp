@@ -1,6 +1,4 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
-import Button from 'react-bootstrap/esm/Button';
 import { useSelector } from 'react-redux';
 import { AppState } from '../../redux';
 
