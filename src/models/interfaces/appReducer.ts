@@ -1,3 +1,6 @@
+import { IResponse } from "./Icities";
+
 export interface IAppReducer{
-    token:string,
+    cityData:IResponse | null,
+    loading:boolean
 }

@@ -11,11 +11,11 @@ import { routerMiddleware } from 'connected-react-router';
 export const history = createBrowserHistory();
 declare global {
   interface Window {
-    _REDUX_DEVTOOLS_EXTENSION_COMPOSE_: any;
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any;
   }
 }
 
-const composeEnhancers = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const persistConfig = {
   key: 'root',

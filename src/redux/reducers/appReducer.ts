@@ -1,13 +1,15 @@
 import { IAppReducer } from '../../models/interfaces/appReducer';
-import { SET_TOKEN, AppActionType } from '../types/appTypes';
+import { SET_CITY,SET_LOADING, AppActionType } from '../types/appTypes';
 const initialState: IAppReducer = {
- token:'hello there'
+ cityData:null, loading:false
 };
 
 const appReducer = (state = initialState, action: AppActionType): IAppReducer => {
   switch (action.type) {
-    case SET_TOKEN:
-      return {...state, token:action.payload};
+    case SET_CITY:
+      return {...state, cityData:action.payload ? {...action.payload} : null};
+    case SET_LOADING:
+      return {...state, loading:action.payload};
     
     default:
       return state;

@@ -1,12 +1,12 @@
-export const SET_TOKEN = 'SET_TOKEN'; 
-export const GET_TOKEN = 'GET_TOKEN'; 
-interface ISetToken{
-    type: typeof SET_TOKEN;
-    payload: string;
+import { IResponse } from '../../models/interfaces/Icities';
+export const SET_CITY = 'SET_CITY'; 
+export const SET_LOADING = 'SET_LOADING'; 
+interface ISetCity{
+    type: typeof SET_CITY;
+    payload: IResponse | null;
 }
-
-interface IGetToken{
-    type: typeof GET_TOKEN;
-    payload: string;
+interface ISetLoading{
+    type: typeof SET_LOADING;
+    payload: boolean;
 }
-export type AppActionType = ISetToken | IGetToken;
+export type AppActionType = ISetCity | ISetLoading;
